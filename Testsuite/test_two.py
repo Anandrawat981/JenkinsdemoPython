@@ -8,16 +8,16 @@ from selenium.webdriver.support.wait import WebDriverWait
 from webdriver_manager.chrome import ChromeDriverManager
 import requests as requests
 
-def test_one_01():
+
+def test_two_02():
     driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
     mywait = WebDriverWait(driver, 10, poll_frequency=2, ignored_exceptions=[Exception])
-    driver.get("https://www.noon.com/uae-en/")
+    driver.get("https://www.flipkart.com/")
     # next_button = driver.find_element(By.XPATH,"//*[@id='__next']/div/section/div/div/div[6]/div/div/div/div/div/div/div/div[2]/div[2]")
     # while(next_button==True):
-    allelements = driver.find_elements(By.XPATH,
-                                       "//*[@id='__next']/div/section/div/div/div[6]/div/div/div/div/div/div/div/div[2]/div[1]/div")
-    print(len(allelements))
-    
+    elementone = driver.find_element(By.XPATH,"//*[text()='Grocery']")
+    elementone.click()
+
     # next_button.click()
 
 
