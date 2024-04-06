@@ -16,8 +16,8 @@ def test_two_02():
     # next_button = driver.find_element(By.XPATH,"//*[@id='__next']/div/section/div/div/div[6]/div/div/div/div/div/div/div/div[2]/div[2]")
     # while(next_button==True):
     driver.implicitly_wait(10)
-    elementone = driver.find_element(By.XPATH,"//*[text()='Grocery']")
-    elementone.click()
+    elementone = driver.find_element(By.XPATH,"//*[text()='Grocery']").text
+    print(elementone)
 
     # next_button.click()
 
