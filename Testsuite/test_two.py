@@ -1,3 +1,4 @@
+import pytest
 from selenium import webdriver
 from time import *
 from selenium.webdriver.chrome.service import Service as ChromeService
@@ -20,6 +21,11 @@ def test_two_02():
     print(elementone)
 
     # next_button.click()
-
-
-
+@pytest.mark.demo
+def test_two_03():
+    str1='Pytest test'
+    print(str1[::-1])
+@pytest.mark.demo
+def test_two_04():
+    lst=['anand','rawat']
+    print(lst[::-2])
