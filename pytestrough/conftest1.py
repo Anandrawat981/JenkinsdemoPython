@@ -6,6 +6,11 @@ from selenium.webdriver.firefox.service import Service as FirefoxService
 from webdriver_manager.chrome import ChromeDriverManager
 from webdriver_manager.firefox import GeckoDriverManager
 #This code will be run both in chrome and firefox parallel
+@pytest.fixture
+def input_total():
+    total=100
+    return total
+
 @pytest.fixture(params=["chrome","firefox"],scope='class')
 def init_driver(request):
     global web_driver
@@ -16,15 +21,3 @@ def init_driver(request):
     request.cls.driver = web_driver
     yield
     web_driver.close()
-
-
-@pytest.mark.usefixtures("init_driver")
-class BaseTest:
-    pass
-
-class Test_Google(BaseTest):
-    def test_google_title(self):
-        self.driver.get("https://www.google.com/")
-        assert self.driver.title == "Google"
-
-
