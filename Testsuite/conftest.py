@@ -81,20 +81,20 @@ def firefoxsetup():
 
 ############# pytest HTML report ###########
 #It is hook for Adding Environment info to HTML Report
-'''def pytest_configure(config):
-    #config.metadata['Project Name'] = 'nop Commerce'
-    #config.metadata['Module Name'] = 'Admin data'
-    #config.metadata['Tester'] = 'Anand'
-    config._metadata = {
-        "Tester": "Anand",
-        "Project Name": "Hybrid Framework Practice",
+def pytest_configure(config):
+    #config._metadata['Project Name'] = 'nop Commerce'
+    #config._metadata['Module Name'] = 'Admin data'
+    #config._metadata['Tester'] = 'Anand'
+    config.metadata = {
+       "Tester": "Anand",
+      "Project Name": "Hybrid Framework Practice",
     }
 
 #It is hook for delete/Modify Environment info to HTML Report
 @pytest.mark.optionalhook
 def pytest_metadata(metadata):
     metadata.pop("JAVA_HOME", None)
-    metadata.pop("Plugins", None)'''
+    metadata.pop("Plugins", None)
 
 
 

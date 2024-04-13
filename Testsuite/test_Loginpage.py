@@ -14,7 +14,7 @@ class Testcase_01(BaseTest):
     password = ReadConfig.getPassword()
     #logger = LogGen.Loggen()
 
-
+    @pytest.mark.smoke
     def test_homepageTitle(self):
        # self.logger.info("*************** Testcase_01 ************")
         #LogGen.Loggen().info("*************** Testcase_01 ************")
@@ -38,7 +38,7 @@ class Testcase_01(BaseTest):
             #LogGen.Loggen().info("*************** home page title Test failed ************")
             assert False
 
-
+    @pytest.mark.smoke
     def test_loginpageTitle(self):
         #self.logger.info("*************** verifying the login page title ***********")
         #self.logger.info("*************** login page title Test started ***********")

@@ -10,6 +10,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 import requests as requests
 
 
+@pytest.mark.demo
 def test_two_02():
     driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
     mywait = WebDriverWait(driver, 10, poll_frequency=2, ignored_exceptions=[Exception])
@@ -25,6 +26,7 @@ def test_two_02():
 def test_two_03():
     str1='Pytest test'
     print(str1[::-1])
+
 @pytest.mark.demo
 def test_two_04():
     lst=['anand','rawat']

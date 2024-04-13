@@ -11,6 +11,7 @@ import requests as requests
 
 #driver = None
 #driver= webdriver.Chrome(service=ChromeService(ChromeDriverManager.install()))
+@pytest.mark.demo
 @pytest.fixture(scope='module')
 def init_driver():
     global driver
@@ -24,10 +25,12 @@ def init_driver():
     print("--------teardown-------")
     driver.quit()
 
+@pytest.mark.demo
 def test_google_title(init_driver):
     assert driver.title =="Google"
     print("Test case Passed")
-@pytest.mark.usefixtures("init_driver")
+@pytest.mark.demo
+@pytest.mark.usefixtures("setup")
 def test_google_url():
     assert driver.current_url =="Google"
     print("Test case Failed")

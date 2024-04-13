@@ -14,17 +14,22 @@ def test_three_01():
     driver.get("https://www.google.com/")
     assert driver.title == "Google"
     driver.quit()
+
+@pytest.mark.demo
 def test_facebook():
     driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
     driver.get("https://www.facebook.com/")
     assert driver.title == "Facebook – log in or sign up"
     driver.quit()
 
+@pytest.mark.demo
 def test_instagram():
     driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
     driver.get("https://www.instagram.com/")
     assert driver.title == "Instagram"
     driver.quit()
+
+@pytest.mark.demo
 def test_python1():
     driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
     driver.get("https://www.python.org/")

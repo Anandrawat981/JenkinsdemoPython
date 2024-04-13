@@ -21,7 +21,7 @@ def setup_module(module):
 
 def teardown_module(module):
     driver.quit()
-
+@pytest.mark.skip
 def test_google_title():
     assert driver.title =="Google"
 

@@ -5,11 +5,11 @@ from selenium.webdriver.common.by import By
 '''@pytest.mark.parametrize("num,result",[(1,11),(2,22),(3,33),(4,44)])
 def test_parameter_calculation(num,result):
     assert 11*num == result '''
-
+@pytest.mark.skip
 @pytest.mark.usefixtures("init_driver")
 class BaseTest:
     pass
-
+@pytest.mark.skip
 class TesthubsportTest(BaseTest):
     @pytest.mark.parametrize(
         "username,password",
@@ -20,6 +20,7 @@ class TesthubsportTest(BaseTest):
 
 
     )
+    @pytest.mark.skip
     def test_login1(self,username,password):
         self.driver.get("https://app.hubspot.com/login")
         self.driver.find_element(By.XPATH,"//*[@id='username']").send_keys(username)

@@ -6,6 +6,7 @@ from selenium.webdriver.firefox.service import Service as FirefoxService
 from webdriver_manager.chrome import ChromeDriverManager
 from webdriver_manager.firefox import GeckoDriverManager
 
+@pytest.mark.demo
 @pytest.fixture(scope='class')
 def init_chrome_driver(request):
     ch_driver= webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
@@ -13,6 +14,7 @@ def init_chrome_driver(request):
     yield
     ch_driver.close()
 
+@pytest.mark.demo
 @pytest.fixture(scope='class')
 def init_firefox_driver(request):
     ff_driver= webdriver.Firefox(service=FirefoxService(GeckoDriverManager().install()))
@@ -28,10 +30,11 @@ class Test_Google_chrome(Base_chrome_Test):
         self.driver.get("https://www.google.com/")
         assert self.driver.title == "Google"
 
+@pytest.mark.demo
 @pytest.mark.usefixtures('init_firefox_driver')
 class Base_firefox_Test:
     pass
-
+@pytest.mark.demo
 class Test_Google_firefox(Base_firefox_Test):
     def test_google_firefox_title(self):
         self.driver.get("https://www.youtube.com/")
